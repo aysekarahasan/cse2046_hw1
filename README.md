@@ -1,4 +1,4 @@
 # cse2046_hw1
 # 150117026 Aysenur Karahasan
-# Ahmet Akil
-# Osman Erikci
+# 150118038 Ahmet Akil
+# 150117038 Osman Erikci
