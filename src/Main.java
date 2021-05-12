@@ -111,6 +111,33 @@ public class Main {
     }
 
     //4.Quick sort(pivot is always selected as the first element
+    public static int partition(int[] array, int start, int end){
+        int pivot = array[start];
+        int p1 = start+1;
+        int i, temp;
+
+        for(i = start+1; i <= end; i++){
+            if(array[i] < pivot){
+                if(i != p1){
+                    temp = array[p1];
+                    array[p1] = array[i];
+                    array[i]= temp;
+                }
+                p1++;
+            }
+        }
+        return p1-1;
+    }
+    public static int[] quickSort(int[] array, int start, int end){
+        int p1;
+        if(start<end){
+            p1 = partition(array, start, end);
+            quickSort(array,start, p1-1);
+            quickSort(array, p1+1, end);
+        }
+        return array;
+    }
+
     //5.Quick sort with median of three pivot selection
 
     //6.Heap-Sort
