@@ -139,6 +139,25 @@ public class Main {
     }
 
     //5.Quick sort with median of three pivot selection
+    public static int[] medianOfThree(int[] array, int left, int right){
+        int mid = (left+right)/2;
+        if(array[right] < array[left]){
+            swapQuickSort(array, left, right);
+        }
+        if(array[mid] < array[left]){
+            swapQuickSort(array, mid, left);
+        }
+        if(array[right] < array[mid]){
+            swapQuickSort(array, right, mid);
+        }
+        return array;
+    }
+    public static void swapQuickSort(int[] array, int left, int right){
+        int temp = array[left];
+        array[left] = array[right];
+        array[right] = temp;
+    }
+
 
     //6.Heap-Sort
     public static int[] heapSort(int[] array){
