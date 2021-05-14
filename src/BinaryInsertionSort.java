@@ -5,9 +5,11 @@ import static java.util.Arrays.binarySearch;
 public class BinaryInsertionSort {
     private int[] array;
     long duration;
+    int count;
 
     public BinaryInsertionSort(int[] array){
         this.array = array;
+        this.count = 0;
 
         long start = System.nanoTime();
         insertionSort(this.array);
@@ -52,6 +54,7 @@ public class BinaryInsertionSort {
             // Placing element at its
             // correct location
             array[j] = x;
+            count++;
         }
     }
 }
