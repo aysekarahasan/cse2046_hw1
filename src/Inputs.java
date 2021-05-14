@@ -31,7 +31,7 @@ class Inputs {
     }
 
 
-    List<int[]> getDecendingInputs() {
+    List<int[]> getDescendingInputs() {
 
         List<int[]> inputs = new ArrayList<>();
         for (int i = 0; i < SIZES.length; i++) {

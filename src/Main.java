@@ -5,7 +5,7 @@ public class Main {
 
         Inputs inputs = new Inputs();
         List<int[]> ascendingInputs = inputs.getAscendingInputs();
-        List<int[]> descendingInputs = inputs.getDecendingInputs();
+        List<int[]> descendingInputs = inputs.getDescendingInputs();
         List<int[]> randomInputs = inputs.getRandomInputs();
 
 
