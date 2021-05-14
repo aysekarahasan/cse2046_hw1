@@ -29,6 +29,10 @@ public class HeapSort {
 
         //build heap(rearrange array)
         for(int i = (length / 2) - 1 ; i >= 0 ;i--){
+            heapify(array, length, i);
+        }
+        //one by one extract an element from heap
+        for(int i = length - 1 ; i > 0 ;i--){
             //move current root to end
             int temp = array[0];
             array[0] = array[i];

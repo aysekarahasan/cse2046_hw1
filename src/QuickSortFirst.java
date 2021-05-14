@@ -46,27 +46,28 @@ public class QuickSortFirst {
 
     public int partition(int[] array, int start, int end){
         int pivot = array[start];
-        int p1 = start+1;
-        int i, temp;
-
-        for(i = start+1; i <= end; i++){
-            if(array[i] < pivot){
-                if(i != p1){
-                    temp = array[p1];
-                    array[p1] = array[i];
-                    array[i]= temp;
-                }
-                p1++;
+        while(start<=end) {
+            while(array[start] < pivot)
+                start++;
+            while(array[end] > pivot)
+                end--;
+            if(start<=end) {
+                int tmp = array[start];
+                array[start] = array[end];
+                array[end] = tmp;
+                start++;
+                end--;
             }
         }
-        return p1-1;
+        return start;
     }
     public void quickSort(int[] array, int start, int end){
-        int p1;
-        if(start<end){
-            p1 = partition(array, start, end);
+        int p1= partition(array, start, end);;
+        if(start<p1-1){
             quickSort(array,start, p1-1);
-            quickSort(array, p1+1, end);
+        }
+        if(end > p1){
+            quickSort(array,p1,end);
         }
     }
 }
