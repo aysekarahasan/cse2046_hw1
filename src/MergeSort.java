@@ -89,13 +89,13 @@ public class MergeSort {
     //l is for left index and r is right index of the sub array of array to be sorted.
     public void mergeSort(int[] array, int l, int r){
         if(l < r){
-            int m = l + (r - 1)/2;
+            int m = (l + r)/2;
 
             //sort first and second halves
             mergeSort(array,l, m);
             mergeSort(array, m+ 1, r);
 
-            merge(array,l,m,r);
+            merge(array,l,r,m);
         }
     }
 }
