@@ -44,15 +44,23 @@ public class QuickSortMedian {
     public void quickSort(int[] array, int left, int right){
         if(left >= right)
             return;
-
         int pivot = getMedian(array,left,right);
-        int partiation = partition(array,left,right);
+       /* int p1= partition(array, left, right,pivot);
+
+        if(left<p1-1){
+            quickSort(array,left, p1-1);
+        }
+        if(right > p1){
+            quickSort(array,p1,right);
+        }*/
+        //
+
+        int partiation = partition(array,left,right,pivot);
 
         quickSort(array,0, partiation-1);
         quickSort(array,partiation+1,right);
     }
-    public int partition(int[] array, int start, int end){
-        int pivot = array[start];
+    public int partition(int[] array, int start, int end, int pivot){
         while(start <= end){
             while(array[start] < pivot)
                 start++;

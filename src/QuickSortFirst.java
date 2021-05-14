@@ -62,7 +62,7 @@ public class QuickSortFirst {
         return start;
     }
     public void quickSort(int[] array, int start, int end){
-        int p1= partition(array, start, end);;
+        int p1= partition(array, start, end);
         if(start<p1-1){
             quickSort(array,start, p1-1);
         }
