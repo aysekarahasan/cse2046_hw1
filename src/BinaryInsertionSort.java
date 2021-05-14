@@ -4,11 +4,25 @@ import static java.util.Arrays.binarySearch;
 
 public class BinaryInsertionSort {
     private int[] array;
+    long duration;
 
     public BinaryInsertionSort(int[] array){
         this.array = array;
 
+        long start = System.nanoTime();
         insertionSort(this.array);
+        long end = System.nanoTime();
+        long duration = (end - start);
+
+        this.duration = duration / 1000;
+
+    }
+
+
+    void countTime(){
+
+
+
     }
 
     public int[] getArray() {

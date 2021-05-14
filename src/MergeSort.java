@@ -2,13 +2,20 @@ public class MergeSort {
     private int[] array;
     private int left;
     private int right;
+    long duration;
 
     public MergeSort(int[] array, int left, int right){
         this.array = array;
         this.left = left;
         this.right = right;
 
+        long start = System.nanoTime();
         mergeSort(this.array,this.left,this.right);
+
+        long end = System.nanoTime();
+        long duration = (end - start);
+
+        this.duration = duration / 1000;
     }
 
     public int[] getArray() {

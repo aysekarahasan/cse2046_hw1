@@ -2,13 +2,21 @@ public class QuickSortFirst {
     private int[] array;
     private int start;
     private int end;
+    long duration;
 
     public QuickSortFirst(int[] array, int start, int end){
         this.array = array;
         this.start = start;
         this.end =end;
 
+        long startTime = System.nanoTime();
         quickSort(this.array,this.start,this.end);
+
+
+        long endTime = System.nanoTime();
+        long duration = (endTime - startTime);
+
+        this.duration = duration / 1000;
     }
 
     public int[] getArray() {

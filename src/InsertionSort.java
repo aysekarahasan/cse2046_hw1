@@ -1,12 +1,22 @@
 public class InsertionSort {
     private int[] array;
     private int length;
+    long duration;
+
 
     public InsertionSort(int[] array, int length){
         this.array = array;
         this.length = length;
 
+        long start = System.nanoTime();
         insertionSorting(this.array,this.length);
+
+
+        long end = System.nanoTime();
+        long duration = (end - start);
+
+        this.duration = duration / 1000;
+
     }
 
     public int[] getArray() {

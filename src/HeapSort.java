@@ -1,10 +1,17 @@
 public class HeapSort {
     private int[] array;
+    long duration;
 
     public HeapSort(int[] array){
         this.array = array;
 
+        long start = System.nanoTime();
         heapSort(this.array);
+
+        long end = System.nanoTime();
+        long duration = (end - start);
+
+        this.duration = duration / 1000;
 
     }
 
