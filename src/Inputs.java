@@ -1,17 +1,28 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 class Inputs {
 
-    final int LOWER_BOUND = 0;
-    final int UPPER_BOUND = 10000;
+    final int[] SIZES = {1000, 2000, 5000, 10_000};
 
-    int[] ascendingInputs() {
+    List<int[]> getAscendingInputs() {
+
+        List<int[]> inputs = new ArrayList<>();
+        for (int i = 0; i < SIZES.length; i++) {
+
+            inputs.add(ascendingInputs(SIZES[i]));
+        }
+        return inputs;
+    }
+
+    private int[] ascendingInputs(int size) {
         /*
         Returns input starting from LOWER up to UPPER_BOUND
         ex: [ 0 1 2 3 4 5 .... 10.000]
          */
 
-        int[] array = new int[UPPER_BOUND - LOWER_BOUND];
+        int[] array = new int[size];
 
         for (int i = 0; i < array.length; i++) {
             array[i] = i;
@@ -19,13 +30,24 @@ class Inputs {
         return array;
     }
 
-    int[] descendingInputs() {
+
+    List<int[]> getDecendingInputs() {
+
+        List<int[]> inputs = new ArrayList<>();
+        for (int i = 0; i < SIZES.length; i++) {
+
+            inputs.add(descendingInputs(SIZES[i]));
+        }
+        return inputs;
+    }
+
+    private int[] descendingInputs(int size) {
         /*
         Returns input starting from UPPER up to LOWER_BOUND
         ex: [10.000 9.999   ...... 3 2 1]
          */
 
-        int[] array = new int[UPPER_BOUND - LOWER_BOUND];
+        int[] array = new int[size];
 
         for (int i = array.length; i > 0; i--) {
             array[i] = i;
@@ -33,28 +55,26 @@ class Inputs {
         return array;
     }
 
+    List<int[]> getRandomInputs() {
 
-    int[] randomInputs() {
+        List<int[]> inputs = new ArrayList<>();
+        for (int i = 0; i < SIZES.length; i++) {
 
-        Random random = new Random();
-        int[] array = new int[UPPER_BOUND - LOWER_BOUND];
-
-        for (int i = 0; i < array.length; i++) {
-            array[i] = random.nextInt(UPPER_BOUND - LOWER_BOUND) + LOWER_BOUND;
+            inputs.add(randomInputs(SIZES[i]));
         }
-        return array;
+        return inputs;
     }
 
-    int[] sameInputs() {
+
+    private int[] randomInputs(int size) {
 
         Random random = new Random();
-        int[] array = new int[UPPER_BOUND - LOWER_BOUND];
-        int value = random.nextInt(UPPER_BOUND - LOWER_BOUND) + LOWER_BOUND;
+        int[] array = new int[size];
+
         for (int i = 0; i < array.length; i++) {
-            array[i] = value;
+            array[i] = random.nextInt(size);
         }
         return array;
-
     }
 
 
