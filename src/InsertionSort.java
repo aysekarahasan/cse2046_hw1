@@ -4,9 +4,9 @@ public class InsertionSort {
     long duration;
 
 
-    public InsertionSort(int[] array, int length){
+    public InsertionSort(int[] array){
         this.array = array;
-        this.length = length;
+        this.length = array.length;
 
         long start = System.nanoTime();
         insertionSorting(this.array,this.length);
@@ -16,6 +16,8 @@ public class InsertionSort {
         long duration = (end - start);
 
         this.duration = duration / 1000;
+        System.out.println("InsertionSort duration is "+ this.duration);
+
 
     }
 

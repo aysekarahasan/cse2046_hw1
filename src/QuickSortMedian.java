@@ -4,10 +4,10 @@ public class QuickSortMedian {
     private int right;
     long duration;
 
-    public QuickSortMedian(int[] array, int left, int right){
+    public QuickSortMedian(int[] array){
         this.array=array;
-        this.left =left;
-        this.right = right;
+        this.left =0;
+        this.right = array.length-1;
 
         long start = System.nanoTime();
         quickSort(this.array,this.left,this.right);

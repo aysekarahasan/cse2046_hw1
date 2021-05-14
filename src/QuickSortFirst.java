@@ -4,10 +4,10 @@ public class QuickSortFirst {
     private int end;
     long duration;
 
-    public QuickSortFirst(int[] array, int start, int end){
+    public QuickSortFirst(int[] array){
         this.array = array;
-        this.start = start;
-        this.end =end;
+        this.start = 0;
+        this.end =array.length-1;
 
         long startTime = System.nanoTime();
         quickSort(this.array,this.start,this.end);
@@ -17,6 +17,7 @@ public class QuickSortFirst {
         long duration = (endTime - startTime);
 
         this.duration = duration / 1000;
+        System.out.println("QuickSortFirst duration is "+ this.duration);
     }
 
     public int[] getArray() {

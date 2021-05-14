@@ -12,6 +12,7 @@ public class HeapSort {
         long duration = (end - start);
 
         this.duration = duration / 1000;
+        System.out.println("HeapSort duration is "+ this.duration);
 
     }
 

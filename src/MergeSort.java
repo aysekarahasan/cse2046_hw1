@@ -4,10 +4,10 @@ public class MergeSort {
     private int right;
     long duration;
 
-    public MergeSort(int[] array, int left, int right){
+    public MergeSort(int[] array){
         this.array = array;
-        this.left = left;
-        this.right = right;
+        this.left = 0;
+        this.right = array.length - 1;
 
         long start = System.nanoTime();
         mergeSort(this.array,this.left,this.right);
@@ -16,30 +16,6 @@ public class MergeSort {
         long duration = (end - start);
 
         this.duration = duration / 1000;
-    }
-
-    public int[] getArray() {
-        return array;
-    }
-
-    public void setArray(int[] array) {
-        this.array = array;
-    }
-
-    public int getLeft() {
-        return left;
-    }
-
-    public void setLeft(int left) {
-        this.left = left;
-    }
-
-    public int getRight() {
-        return right;
-    }
-
-    public void setRight(int right) {
-        this.right = right;
     }
 
     public void merge(int[] array, int l, int r, int m){
