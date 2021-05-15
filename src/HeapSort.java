@@ -1,6 +1,6 @@
 public class HeapSort {
     private int[] array;
-    long duration;
+    double duration;
     int count;
 
     public HeapSort(int[] array) {
@@ -12,7 +12,7 @@ public class HeapSort {
         long end = System.nanoTime();
         long duration = (end - start);
 
-        this.duration = duration / 1000;
+        this.duration = (double) duration / 1_000_000;
         System.out.println(this.getClass().getName()+ "  "+array.length + "  "+ this.duration + " " + count);
 
 

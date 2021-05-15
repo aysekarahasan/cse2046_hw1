@@ -2,7 +2,7 @@ public class CountingSort {
 
     int[] array;
     int count;
-    long duration;
+    double duration;
     int largestNumber;
 
     CountingSort(int[] array) {
@@ -16,7 +16,7 @@ public class CountingSort {
         long end = System.nanoTime();
         long duration = (end - start);
 
-        this.duration = duration / 1000;
+        this.duration = (double) duration / 1_000_000;
         System.out.println(this.getClass().getName()+ "  "+array.length + "  "+ this.duration + " " + count);
 
     }

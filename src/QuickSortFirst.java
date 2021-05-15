@@ -2,7 +2,7 @@ public class QuickSortFirst {
     private int[] array;
     private int start;
     private int end;
-    long duration;
+    double duration;
     int count;
 
     public QuickSortFirst(int[] array){
@@ -17,7 +17,7 @@ public class QuickSortFirst {
         long endTime = System.nanoTime();
         long duration = (endTime - startTime);
 
-        this.duration = duration / 1000;
+        this.duration = (double) duration / 1_000_000;
         System.out.println(this.getClass().getName()+ "  "+array.length + "  "+ this.duration + " " + count);
 
     }

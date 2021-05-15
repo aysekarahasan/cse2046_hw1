@@ -2,7 +2,7 @@ public class MergeSort {
     private int[] array;
     private int left;
     private int right;
-    long duration;
+    double duration;
     int count;
 
     public MergeSort(int[] array){
@@ -16,7 +16,7 @@ public class MergeSort {
         long end = System.nanoTime();
         long duration = (end - start);
 
-        this.duration = duration / 1000;
+        this.duration = (double) duration / 1_000_000;
         System.out.println(this.getClass().getName()+ "  "+array.length + "  "+ this.duration + " " + count);
 
     }

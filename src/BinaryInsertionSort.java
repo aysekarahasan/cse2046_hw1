@@ -4,7 +4,7 @@ import static java.util.Arrays.binarySearch;
 
 public class BinaryInsertionSort {
     private int[] array;
-    long duration;
+    double duration;
     int count;
 
     public BinaryInsertionSort(int[] array){
@@ -16,7 +16,7 @@ public class BinaryInsertionSort {
         long end = System.nanoTime();
         long duration = (end - start);
 
-        this.duration = duration / 1000;
+        this.duration = (double) duration / 1_000_000;
         System.out.println(this.getClass().getName()+ "  "+array.length + "  "+ this.duration + " " + count);
 
     }
