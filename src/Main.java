@@ -69,14 +69,12 @@ public class Main {
             System.out.println("=== ASCENDING INPUTS ====");
             for (int[] array : ascendingInputs) {
                 runAlgorithms(array);
-                System.out.println();
             }
 
             System.out.println("\n=== DESCENDING INPUTS ====");
 
             for (int[] array : descendingInputs) {
                 runAlgorithms(array);
-                System.out.println();
 
             }
 
@@ -84,7 +82,6 @@ public class Main {
 
             for (int[] array : randomInputs) {
                 runAlgorithms(array);
-                System.out.println();
 
             }
         }
@@ -94,13 +91,13 @@ public class Main {
 
     static void runAlgorithms(int[] array) {
         HeapSort heapSort = new HeapSort(array);
-       QuickSortMedian quickSortMedian = new QuickSortMedian(array);
+ /*       QuickSortMedian quickSortMedian = new QuickSortMedian(array);
         QuickSortFirst quickSortFirst = new QuickSortFirst(array);
         MergeSort mergeSort = new MergeSort(array);
         BinaryInsertionSort binaryInsertionSort = new BinaryInsertionSort(array);
         InsertionSort insertionSort = new InsertionSort(array);
         CountingSort countingSort = new CountingSort(array);
-    }
+  */  }
 
 
 }

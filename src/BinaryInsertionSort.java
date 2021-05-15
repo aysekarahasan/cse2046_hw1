@@ -16,7 +16,7 @@ public class BinaryInsertionSort {
         long end = System.nanoTime();
         long duration = (end - start);
 
-        this.duration = (double) duration / 1_000_000;
+        this.duration = (double) duration;
         System.out.println(this.getClass().getName()+ "  "+array.length + "  "+ this.duration + " " + count);
 
     }
