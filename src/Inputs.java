@@ -4,12 +4,12 @@ import java.util.Random;
 
 class Inputs {
 
-    int[] SIZES = new int[90];
+    int[] SIZES = new int[100];
 
     Inputs(){
 
-        for(int i=0;i<90;i++){
-            SIZES[i] = (int) Math.pow(2,i+1);
+        for(int i=0;i<100;i++){
+            SIZES[i] = (int) Math.pow(i+1,2);
         }
     }
 
