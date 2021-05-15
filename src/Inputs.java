@@ -4,7 +4,7 @@ import java.util.Random;
 
 class Inputs {
 
-    final int[] SIZES = {1000, 2000, 5000, 10_000,100_000};
+    final int[] SIZES = {1000, 2000, 5000, 10_000,15_000};
 
     List<int[]> getAscendingInputs() {
 
