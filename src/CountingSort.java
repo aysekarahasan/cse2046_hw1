@@ -17,7 +17,7 @@ public class CountingSort {
         long duration = (end - start);
 
         this.duration = duration / 1000;
-
+        System.out.println("CountingSort duration is "+ this.duration);
     }
 
     void findMaxNumberInArray(int[] array) {
@@ -30,17 +30,28 @@ public class CountingSort {
         this.largestNumber = largestNumber;
     }
 
-    void countingsort(int[] arrayToBeSorted) {
+    int[] countingsort(int[] arrayToBeSorted) {
         int numberOfExistence[] = new int[largestNumber+1];
-        int i;
-        int j;
+        int result[] = new int[arrayToBeSorted.length];
 
-        for (i = 0; i < largestNumber; i++) {
+        for (int i = 0; i < largestNumber; i++) {
             numberOfExistence[i] = 0;
         }
-        for (j = 0; j < arrayToBeSorted.length; j++) {
+
+        for (int j = 0; j < arrayToBeSorted.length; j++) {
             numberOfExistence[arrayToBeSorted[j]]++;
         }
+        for( int i = 1; i <= largestNumber; i++){
+        numberOfExistence[i] += numberOfExistence[i-1];
+        }
+        for(int k = arrayToBeSorted.length - 1; k >= 0; k--){
+            result[numberOfExistence[arrayToBeSorted[k]] - 1] = arrayToBeSorted[k];
+            numberOfExistence[arrayToBeSorted[k]]--;
+        }
+        for(int i = 0; i < arrayToBeSorted.length; i++){
+            arrayToBeSorted[i] = result[i];
+        }
 
+        return result;
     }
 }

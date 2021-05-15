@@ -17,7 +17,7 @@ public class BinaryInsertionSort {
         long duration = (end - start);
 
         this.duration = duration / 1000;
-
+        System.out.println("BinaryInsertionSort duration is "+ this.duration);
     }
 
 

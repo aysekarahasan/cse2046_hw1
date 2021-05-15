@@ -16,6 +16,7 @@ public class QuickSortMedian {
         long duration = (end - start);
 
         this.duration = duration / 1000;
+        System.out.println("QuickSortMedian duration is "+ this.duration);
     }
 
     public static void medianQuickSort(int arr[], int low, int high) {

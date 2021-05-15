@@ -25,6 +25,13 @@ public class Main {
             System.out.print(a);
             System.out.print(", ");
         }
+        int[] array7=  {0,5,3,7,10,23,6,5,7,2};
+        CountingSort countingSort1 = new CountingSort(array7);
+        System.out.println();
+        for( int a : array7){
+            System.out.print(a);
+            System.out.print(", ");
+        }
 
 
         int[] array4 =  {0,5,3,7,10,23,6,5,7,2};

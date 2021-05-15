@@ -16,6 +16,7 @@ public class MergeSort {
         long duration = (end - start);
 
         this.duration = duration / 1000;
+        System.out.println("MergeSort duration is "+ this.duration);
     }
 
     public void merge(int[] array, int l, int r, int m){
