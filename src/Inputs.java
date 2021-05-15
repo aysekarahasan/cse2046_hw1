@@ -4,7 +4,14 @@ import java.util.Random;
 
 class Inputs {
 
-    final int[] SIZES = {1000, 2000, 3000, 4000,  5000, 6000, 7000, 8000, 9000, 10_000, 11_000, 12_000, 13_000, 14_000, 15_000};
+    int[] SIZES = new int[90];
+
+    Inputs(){
+
+        for(int i=0;i<90;i++){
+            SIZES[i] = (int) Math.pow(2,i+1);
+        }
+    }
 
     List<int[]> getAscendingInputs() {
 
