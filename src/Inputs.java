@@ -57,7 +57,7 @@ class Inputs {
         int[] array = new int[size];
 
         for (int i = array.length-1; i >= 0; i--) {
-            array[i] = i;
+            array[array.length - i - 1] = i;
         }
         return array;
     }
