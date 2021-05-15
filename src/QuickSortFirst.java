@@ -17,7 +17,7 @@ public class QuickSortFirst {
         long endTime = System.nanoTime();
         long duration = (endTime - startTime);
 
-        this.duration = (double) duration ;
+        this.duration = (double) duration /100000;
         System.out.println(this.getClass().getName()+ "  "+array.length + "  "+ this.duration + " " + count);
 
     }

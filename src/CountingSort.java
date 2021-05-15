@@ -16,7 +16,7 @@ public class CountingSort {
         long end = System.nanoTime();
         long duration = (end - start);
 
-        this.duration = (double) duration ;
+        this.duration = (double) duration /100000;
         System.out.println(this.getClass().getName()+ "  "+array.length + "  "+ this.duration + " " + count);
 
     }
