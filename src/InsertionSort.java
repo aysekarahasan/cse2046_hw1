@@ -2,6 +2,7 @@ public class InsertionSort {
     private int[] array;
     private int length;
     long duration;
+    int count;
 
 
     public InsertionSort(int[] array){
@@ -45,7 +46,7 @@ public class InsertionSort {
             j = i - 1;
 
             while (j >= 0 && array[j] > key){
-
+                count++;
                 array[j+1] = array[j];
                 j -= 1;
             }

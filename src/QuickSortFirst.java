@@ -3,6 +3,7 @@ public class QuickSortFirst {
     private int start;
     private int end;
     long duration;
+    int count;
 
     public QuickSortFirst(int[] array){
         this.array = array;
@@ -62,6 +63,7 @@ public class QuickSortFirst {
         return start;
     }
     public void quickSort(int[] array, int start, int end){
+        count++;
         int p1= partition(array, start, end);
         if(start<p1-1){
             quickSort(array,start, p1-1);
