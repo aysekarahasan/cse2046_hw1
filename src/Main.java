@@ -94,7 +94,7 @@ public class Main {
 
     static void runAlgorithms(int[] array) {
         HeapSort heapSort = new HeapSort(array);
-        QuickSortMedian quickSortMedian = new QuickSortMedian(array);
+       QuickSortMedian quickSortMedian = new QuickSortMedian(array);
         QuickSortFirst quickSortFirst = new QuickSortFirst(array);
         MergeSort mergeSort = new MergeSort(array);
         BinaryInsertionSort binaryInsertionSort = new BinaryInsertionSort(array);
