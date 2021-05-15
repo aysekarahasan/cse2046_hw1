@@ -20,13 +20,6 @@ public class BinaryInsertionSort {
         System.out.println("BinaryInsertionSort duration is "+ this.duration);
     }
 
-
-    void countTime(){
-
-
-
-    }
-
     public int[] getArray() {
         return array;
     }

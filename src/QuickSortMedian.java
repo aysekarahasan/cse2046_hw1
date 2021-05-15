@@ -3,6 +3,7 @@ public class QuickSortMedian {
     private int left;
     private int right;
     long duration;
+    int count;
 
     public QuickSortMedian(int[] array) {
         this.array = array;
@@ -16,10 +17,10 @@ public class QuickSortMedian {
         long duration = (end - start);
 
         this.duration = duration / 1000;
-        System.out.println("QuickSortMedian duration is "+ this.duration);
+        System.out.println("QuickSortMedian duration is " + this.duration);
     }
 
-    public static void medianQuickSort(int arr[], int low, int high) {
+    public void medianQuickSort(int arr[], int low, int high) {
         if (low >= high)
             return;
 
@@ -32,8 +33,8 @@ public class QuickSortMedian {
         }
     }
 
-    public static void QuickSort(int arr[], int low, int high) {
-
+    public void QuickSort(int arr[], int low, int high) {
+        count++;
         if (low < high) {
             int pi = partition(arr, low, high);
 
@@ -44,7 +45,7 @@ public class QuickSortMedian {
         }
     }
 
-    public static int partition(int arr[], int low, int high) {
+    public int partition(int arr[], int low, int high) {
         int pivot = arr[high];
         int i = (low - 1); // index of smaller element
 

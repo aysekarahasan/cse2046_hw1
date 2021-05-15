@@ -39,6 +39,7 @@ public class CountingSort {
         }
 
         for (int j = 0; j < arrayToBeSorted.length; j++) {
+            count++;
             numberOfExistence[arrayToBeSorted[j]]++;
         }
         for( int i = 1; i <= largestNumber; i++){

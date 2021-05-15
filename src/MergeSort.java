@@ -3,6 +3,7 @@ public class MergeSort {
     private int left;
     private int right;
     long duration;
+    int count;
 
     public MergeSort(int[] array){
         this.array = array;
@@ -49,6 +50,7 @@ public class MergeSort {
                 j++;
             }
             k++;
+            count++;
         }
         //Copy the remaining elements of L[], if any
         while(i < a){
@@ -66,6 +68,8 @@ public class MergeSort {
     //l is for left index and r is right index of the sub array of array to be sorted.
     public void mergeSort(int[] array, int l, int r){
         if(l < r){
+            count++;
+
             int m = (l + r)/2;
 
             //sort first and second halves
