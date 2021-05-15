@@ -4,13 +4,13 @@ public class QuickSortMedian {
     private int right;
     long duration;
 
-    public QuickSortMedian(int[] array){
-        this.array=array;
-        this.left =0;
-        this.right = array.length-1;
+    public QuickSortMedian(int[] array) {
+        this.array = array;
+        this.left = 0;
+        this.right = array.length - 1;
 
         long start = System.nanoTime();
-        quickSort(this.array,this.left,this.right);
+        medianQuickSort(this.array, this.left, this.right);
 
         long end = System.nanoTime();
         long duration = (end - start);
@@ -18,80 +18,53 @@ public class QuickSortMedian {
         this.duration = duration / 1000;
     }
 
-    public int[] getArray() {
-        return array;
-    }
-
-    public void setArray(int[] array) {
-        this.array = array;
-    }
-
-    public int getLeft() {
-        return left;
-    }
-
-    public void setLeft(int left) {
-        this.left = left;
-    }
-
-    public int getRight() {
-        return right;
-    }
-
-    public void setRight(int right) {
-        this.right = right;
-    }
-    public void quickSort(int[] array, int left, int right){
-        if(left >= right)
+    public static void medianQuickSort(int arr[], int low, int high) {
+        if (low >= high)
             return;
-        int pivot = getMedian(array,left,right);
-       /* int p1= partition(array, left, right,pivot);
 
-        if(left<p1-1){
-            quickSort(array,left, p1-1);
+        if (low < high) {
+
+            //int pi = medianPivot(arr, low, high);
+
+            QuickSort(arr, low, high);
+
         }
-        if(right > p1){
-            quickSort(array,p1,right);
-        }*/
-        //
-
-        int partiation = partition(array,left,right,pivot);
-
-        quickSort(array,0, partiation-1);
-        quickSort(array,partiation+1,right);
     }
-    public int partition(int[] array, int start, int end, int pivot){
-        while(start <= end){
-            while(array[start] < pivot)
-                start++;
-            while (array[end] > pivot)
-                end--;
-            if(start<=end){
-                int temp = array[start];
-                array[start] = array[end];
-                array[end] = temp;
-                start++;
-                end--;
+
+    public static void QuickSort(int arr[], int low, int high) {
+
+        if (low < high) {
+            int pi = partition(arr, low, high);
+
+            // Recursively sort elements before
+            // partition and after partition
+            QuickSort(arr, low, pi - 1);
+            QuickSort(arr, pi + 1, high);
+        }
+    }
+
+    public static int partition(int arr[], int low, int high) {
+        int pivot = arr[high];
+        int i = (low - 1); // index of smaller element
+
+        for (int j = low; j < high; j++) {
+            // If current element is smaller than or
+            // equal to pivot
+            if (arr[j] <= pivot) {
+                i++;
+
+                // swap arr[i] and arr[j]
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
             }
         }
-        return start;
-    }
-    public int getMedian(int[] array, int left, int right){
-        int mid = (left+right)/2;
-        if(array[right] < array[left]){
-            swapQuickSort(array, left, right);
-        }
-        if(array[mid] < array[left]){
-            swapQuickSort(array, mid, left);
-        }
-        if(array[right] < array[mid]){
-            swapQuickSort(array, right, mid);
-        }
-        return mid;
-    }
-    public static void swapQuickSort(int[] array, int left, int right){
-        int temp = array[left];
-        array[left] = array[right];
-        array[right] = temp;
+
+        // swap arr[i+1] and arr[high] (or pivot)
+        int temp = arr[i + 1];
+        arr[i + 1] = arr[high];
+        arr[high] = temp;
+        return i + 1;
+
     }
 }
