@@ -3,7 +3,7 @@ import java.util.List;
 public class Main {
     public static void main(String args[]) {
 
-        boolean test = true;
+        boolean test = false;
         if(test) {
             int[] array1 = {0, 5, 3, 7, 10, 23, 6, 5, 7, 2};
             QuickSortMedian quickSortMedian1 = new QuickSortMedian(array1);
@@ -50,14 +50,15 @@ public class Main {
                 System.out.print(a);
                 System.out.print(", ");
             }
+            int[] array7=  {0,5,3,7,10,23,6,5,7,2};
+            CountingSort countingSort1 = new CountingSort(array7);
+            System.out.println();
+            for( int a : array7){
+                System.out.print(a);
+                System.out.print(", ");
+            }
         }
-        int[] array7=  {0,5,3,7,10,23,6,5,7,2};
-        CountingSort countingSort1 = new CountingSort(array7);
-        System.out.println();
-        for( int a : array7){
-            System.out.print(a);
-            System.out.print(", ");
-        }
+
 
 
         if(!test) {
