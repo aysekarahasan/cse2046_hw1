@@ -4,7 +4,7 @@ public class Main {
     public static void main(String args[]) {
 
         boolean test = false;
-        if(test) {
+        if (test) {
             int[] array1 = {0, 5, 3, 7, 10, 23, 6, 5, 7, 2};
             QuickSortMedian quickSortMedian1 = new QuickSortMedian(array1);
             System.out.println();
@@ -43,41 +43,49 @@ public class Main {
                 System.out.print(", ");
             }
 
-            int[] array6 = {0, 5, 3, 7, 10, 23, 6, 5, 7, 2,100};
+            int[] array6 = {0, 5, 3, 7, 10, 23, 6, 5, 7, 2, 100};
             CountingSort countingSort = new CountingSort(array6);
             System.out.println();
             for (int a : array6) {
                 System.out.print(a);
                 System.out.print(", ");
             }
-            int[] array7=  {0,5,3,7,10,23,6,5,7,2};
+            int[] array7 = {0, 5, 3, 7, 10, 23, 6, 5, 7, 2};
             CountingSort countingSort1 = new CountingSort(array7);
             System.out.println();
-            for( int a : array7){
+            for (int a : array7) {
                 System.out.print(a);
                 System.out.print(", ");
             }
         }
 
 
-
-        if(!test) {
+        if (!test) {
             Inputs inputs = new Inputs();
             List<int[]> ascendingInputs = inputs.getAscendingInputs();
             List<int[]> descendingInputs = inputs.getDescendingInputs();
             List<int[]> randomInputs = inputs.getRandomInputs();
 
-
+            System.out.println("=== ASCENDING INPUTS ====");
             for (int[] array : ascendingInputs) {
                 runAlgorithms(array);
+                System.out.println();
             }
+
+            System.out.println("\n=== DESCENDING INPUTS ====");
 
             for (int[] array : descendingInputs) {
                 runAlgorithms(array);
+                System.out.println();
+
             }
+
+            System.out.println("\n=== RANDOM INPUTS ====");
 
             for (int[] array : randomInputs) {
                 runAlgorithms(array);
+                System.out.println();
+
             }
         }
 

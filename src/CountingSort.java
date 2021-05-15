@@ -17,7 +17,8 @@ public class CountingSort {
         long duration = (end - start);
 
         this.duration = duration / 1000;
-        System.out.println("CountingSort duration is "+ this.duration);
+        System.out.println(this.getClass().getName()+ "  "+array.length + "  "+ this.duration + " " + count);
+
     }
 
     void findMaxNumberInArray(int[] array) {
